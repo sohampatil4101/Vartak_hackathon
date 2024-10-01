@@ -881,18 +881,18 @@
 							</div>
 							<div class="profile-social">
 								<h5 class="mb-20 h5 text-blue">Social Links</h5>
-								<ul class="clearfix" style="display: flex; flex-direction: column;" >
+								<ul class="clearfix" style="display: flex; flex-direction: column;" id="account-list">
 									<li>
-										<i class="fa fa-times" aria-hidden="true" >Buisness account</i>
+									  <i class="fa fa-times" aria-hidden="true"></i> Business account
 									</li>
 									<li>
-										<i class="fa fa-times" aria-hidden="true" >Private account</i>
+									  <i class="fa fa-times" aria-hidden="true"></i> Private account
 									</li>
 									<li>
-										<i class="fa fa-times" aria-hidden="true" >Verified account</i>
+									  <i class="fa fa-times" aria-hidden="true"></i> Verified account
 									</li>
-									
 								</ul>
+								  
 							</div>
 							<div class="profile-skills">
 								<h5 class="mb-20 h5 text-blue">Key Skills</h5>
@@ -2550,6 +2550,22 @@
 
 		const imageElements = document.querySelector('.img_');
 		imageElements.src = data['profile_pic_url'];
+
+
+
+		const listItems = document.querySelectorAll('#account-list li');
+
+		// Array of account types corresponding to the JSON keys
+		const accountTypes = ['is_business', 'is_verified', 'is_private'];
+
+		listItems.forEach((li, index) => {
+		const accountType = accountTypes[index]; // Get the corresponding account type from the array
+
+		if (data[accountType]) {
+			// If true, replace 'fa-times' with 'fa-check'
+			li.querySelector('i').classList.replace('fa-times', 'fa-check');
+		}
+		});
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
