@@ -810,7 +810,7 @@
                                     <div class="tab height-100-p" style="height: 1200px;">
                                         <ul class="nav nav-tabs customtab" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">Timeline</a
+                                                <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">Posts</a
 											>
 										</li>
 										<li class="nav-item">
@@ -841,24 +841,9 @@
 										>
 											<div class="pd-20">
 												<div class="cards" style="display: flex; gap: 30px; flex-wrap: wrap;" >
-														<div class="card" style="width: 345px; height: 105px; display: flex; flex-direction: row; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 11px;" >
-															<div class="img" style="width: 30%; " >
-																<img src="vendors/images/photo2.jpg" alt="" style="padding: 15px; border-radius: 24px; " >
-															</div>
-															<div class="details" style="width: 70%; padding: 15px;" >
-																<small style="display: block; white-space: wrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">asnxjansjksssssssssssssxnkasssssssskansxknaksnxknaxsnanks</small>
-																<ul style="display: flex; gap: 10px; margin-top: 15px; float: left;">
-																	<small>18/07/1211</small>
-																</ul>
-																<ul style="display: flex; gap: 10px; margin-top: 15px; float: right;">
-																	<i class="fa fa-heart" aria-hidden="true">12</i>
-																	<i class="fa fa-commenting-o" aria-hidden="true">12</i>
-																</ul>
-															</div>
-
-														</div>
-													</div>
+            										<div id="cards_loading" class="loading-text">Loading...</div>
 												</div>
+											</div>
 
 											</div>
 										</div>
@@ -2264,7 +2249,7 @@
                 caption.style.overflowWrap = 'break-word';
                 caption.style.maxWidth = '100%';
                 caption.style.height = '40px';
-				caption.textContent = post.caption && post.caption.length > 18 ? post.caption.slice(0, 18) + '...' : post.caption || 'No Caption';
+				caption.textContent = post.caption && post.caption.length > 68 ? post.caption.slice(0, 68) + '...' : post.caption || 'No Caption';
 
                 const date = document.createElement('ul');
                 date.style.display = 'flex';
@@ -2301,6 +2286,7 @@
                 card.appendChild(imgDiv);
                 card.appendChild(detailsDiv);
                 cardsContainer.appendChild(card); // Append the card to the cards container
+				document.getElementById('cards_loading').style.display = "none"
             });
         })
         .catch(error => {
