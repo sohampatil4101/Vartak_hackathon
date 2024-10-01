@@ -68,6 +68,15 @@
     </script>
     <!-- End Google Tag Manager -->
 </head>
+<style>
+	.fas.fa-heart:hover {
+  color: #f44336 !important;
+}
+
+.fas.fa-share-alt:hover {
+  color: #0d47a1 !important;
+}
+</style>
 
 <body>
     <div class="pre-loader">
@@ -232,7 +241,7 @@
 							data-toggle="dropdown"
 						>
 							<span class="user-icon">
-								<img src="vendors/images/photo1.jpg" alt=""  class="img_" />
+								<img src="vendors/images/photo1.jpg" alt="no profile"  id="img_" />
 							</span>
 							<span class="user-name" id="user-name" >Ross C. Lopez</span>
 						</a>
@@ -708,10 +717,10 @@
 
                     <div class="row">
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
-                            <div class="pd-20 card-box height-100-p">
+                            <div class="pd-20 card-box height-100-p" style="height: 1200px;">
                                 <div class="profile-photo">
 
-                                    <img src="vendors/images/photo1.jpg" alt="" class="avatar-photo" />
+                                    <img src="vendors/images/photo1.jpg" alt="no profile" id="avatar-photo" />
                                     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
@@ -798,7 +807,7 @@
                         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 mb-30">
                             <div class="card-box height-100-p overflow-hidden">
                                 <div class="profile-tab height-100-p">
-                                    <div class="tab height-100-p">
+                                    <div class="tab height-100-p" style="height: 1200px;">
                                         <ul class="nav nav-tabs customtab" role="tablist">
                                             <li class="nav-item">
                                                 <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">Timeline</a
@@ -823,7 +832,7 @@
 											>
 										</li>
 									</ul>
-									<div class="tab-content">
+									<div class="tab-content" style="height: 1200px;">
 										<!-- Timeline Tab start -->
 										<div
 											class="tab-pane fade show active"
@@ -831,131 +840,26 @@
 											role="tabpanel"
 										>
 											<div class="pd-20">
-												<div class="profile-timeline">
-													<div class="timeline-month">
-														<h5>August, 2020</h5>
-													</div>
-													<div class="profile-timeline-list">
-														<ul>
-															<li>
-																<div class="date">12 Aug</div>
-																<div class="task-name">
-																	<i class="ion-android-alarm-clock"></i> Task
-																	Added
-																</div>
-																<p>
-																	Lorem ipsum dolor sit amet, consectetur
-																	adipisicing elit.
-																</p>
-																<div class="task-time">09:30 am</div>
-															</li>
-															<li>
-																<div class="date">10 Aug</div>
-																<div class="task-name">
-																	<i class="ion-ios-chatboxes"></i> Task Added
-																</div>
-																<p>
-																	Lorem ipsum dolor sit amet, consectetur
-																	adipisicing elit.
-																</p>
-																<div class="task-time">09:30 am</div>
-															</li>
-															<li>
-																<div class="date">10 Aug</div>
-																<div class="task-name">
-																	<i class="ion-ios-clock"></i> Event Added
-																</div>
-																<p>
-																	Lorem ipsum dolor sit amet, consectetur
-																	adipisicing elit.
-																</p>
-																<div class="task-time">09:30 am</div>
-															</li>
-															<li>
-																<div class="date">10 Aug</div>
-																<div class="task-name">
-																	<i class="ion-ios-clock"></i> Event Added
-																</div>
-																<p>
-																	Lorem ipsum dolor sit amet, consectetur
-																	adipisicing elit.
-																</p>
-																<div class="task-time">09:30 am</div>
-															</li>
-														</ul>
-													</div>
-													<div class="timeline-month">
-														<h5>July, 2020</h5>
-													</div>
-													<div class="profile-timeline-list">
-														<ul>
-															<li>
-																<div class="date">12 July</div>
-																<div class="task-name">
-																	<i class="ion-android-alarm-clock"></i> Task
-																	Added
-																</div>
-																<p>
-																	Lorem ipsum dolor sit amet, consectetur
-																	adipisicing elit.
-																</p>
-																<div class="task-time">09:30 am</div>
-															</li>
-															<li>
-																<div class="date">10 July</div>
-																<div class="task-name">
-																	<i class="ion-ios-chatboxes"></i> Task Added
-																</div>
-																<p>
-																	Lorem ipsum dolor sit amet, consectetur
-																	adipisicing elit.
-																</p>
-																<div class="task-time">09:30 am</div>
-															</li>
-														</ul>
-													</div>
-													<div class="timeline-month">
-														<h5>June, 2020</h5>
-													</div>
-													<div class="profile-timeline-list">
-														<ul>
-															<li>
-																<div class="date">12 June</div>
-																<div class="task-name">
-																	<i class="ion-android-alarm-clock"></i> Task
-																	Added
-																</div>
-																<p>
-																	Lorem ipsum dolor sit amet, consectetur
-																	adipisicing elit.
-																</p>
-																<div class="task-time">09:30 am</div>
-															</li>
-															<li>
-																<div class="date">10 June</div>
-																<div class="task-name">
-																	<i class="ion-ios-chatboxes"></i> Task Added
-																</div>
-																<p>
-																	Lorem ipsum dolor sit amet, consectetur
-																	adipisicing elit.
-																</p>
-																<div class="task-time">09:30 am</div>
-															</li>
-															<li>
-																<div class="date">10 June</div>
-																<div class="task-name">
-																	<i class="ion-ios-clock"></i> Event Added
-																</div>
-																<p>
-																	Lorem ipsum dolor sit amet, consectetur
-																	adipisicing elit.
-																</p>
-																<div class="task-time">09:30 am</div>
-															</li>
-														</ul>
+												<div class="cards" style="display: flex; gap: 30px; flex-wrap: wrap;" >
+														<div class="card" style="width: 345px; height: 105px; display: flex; flex-direction: row; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 11px;" >
+															<div class="img" style="width: 30%; " >
+																<img src="vendors/images/photo2.jpg" alt="" style="padding: 15px; border-radius: 24px; " >
+															</div>
+															<div class="details" style="width: 70%; padding: 15px;" >
+																<small style="display: block; white-space: wrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">asnxjansjksssssssssssssxnkasssssssskansxknaksnxknaxsnanks</small>
+																<ul style="display: flex; gap: 10px; margin-top: 15px; float: left;">
+																	<small>18/07/1211</small>
+																</ul>
+																<ul style="display: flex; gap: 10px; margin-top: 15px; float: right;">
+																	<i class="fa fa-heart" aria-hidden="true">12</i>
+																	<i class="fa fa-commenting-o" aria-hidden="true">12</i>
+																</ul>
+															</div>
+
+														</div>
 													</div>
 												</div>
+
 											</div>
 										</div>
 										<!-- Timeline Tab End -->
@@ -1562,20 +1466,9 @@
 
 
 
-                    <div class="row" style="background-color: white; border-radius: 11px; margin: 0px; margin-bottom: 30px; padding: 15px;">
-                        <iframe id="map" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="row" style="background-color: white; border-radius: 11px; margin: 0px; margin-bottom: 30px; padding: 0px;">
+                        <iframe id="map" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
-                        <script>
-                            // Get latitude and longitude from input
-                            const latitude = 19.3835;
-                            const longitude = 72.8307;
-
-                            // Construct the iframe source URL without an API key
-                            const mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}&output=embed`;
-
-                            // Set the iframe source to the constructed URL
-                            document.getElementById('map').src = mapUrl;
-                        </script>
                     </div>
 
                     <div class="row pb-10">
@@ -2249,7 +2142,8 @@
 	</body>
 </html>
 <script>
-	fetch('http://127.0.0.1:8000/instagram/user_info/?username=sidddhesh.211623')
+	const username = 'sidddhesh.211623';
+	fetch(`http://127.0.0.1:8000/instagram/user_info/?username=${username}`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
@@ -2257,8 +2151,6 @@
         return response.json();
     })
     .then(data => {
-        console.log('User Info:', data);
-        console.log('User Info:', data['id']);
 		const userNameElement = document.getElementById('user-name');
         userNameElement.textContent = data['username'] || 'Unknown User'; 
 		const userNameElements = document.getElementById('username_');
@@ -2282,25 +2174,37 @@
 		const address = document.getElementById('address_');
         address.textContent = data['address_street'] || 'no bio'; 
 
-		const imageElement = document.querySelector('.avatar-photo');
-		imageElement.src = data['profile_pic_url'];
 
-		const imageElements = document.querySelector('.img_');
-		imageElements.src = data['profile_pic_url'];
+		const profilePicUrl = data['profile_pic_url'] || "vendors/images/photo1.jpg";
 
+		const imageElement = document.getElementById('avatar-photo');
+		imageElement.src = `${profilePicUrl}?t=${new Date().getTime()}`;
+		imageElement.onerror = function() {
+			this.src = "vendors/images/photo1.jpg"; // Fallback image
+		};
 
+		const imageElements = document.getElementById('img_');
+		imageElements.src = `${profilePicUrl}?t=${new Date().getTime()}`;
+		imageElements.onerror = function() {
+			this.src = "vendors/images/photo1.jpg"; // Fallback image
+		};
 
 		const listItems = document.querySelectorAll('#account-list li');
-		console.log("soham is great", data['latitude'], data['longitude'])
 
-		// Array of account types corresponding to the JSON keys
+		
+		const latitude = data['latitude']
+		const longitude = data['longitude']
+
+		const mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}&output=embed`;
+
+		document.getElementById('map').src = mapUrl;
+
 		const accountTypes = ['is_business', 'is_verified', 'is_private'];
 
 		listItems.forEach((li, index) => {
-		const accountType = accountTypes[index]; // Get the corresponding account type from the array
+		const accountType = accountTypes[index]; 
 
 		if (data[accountType]) {
-			// If true, replace 'fa-times' with 'fa-check'
 			li.querySelector('i').classList.replace('fa-times', 'fa-check');
 		}
 		});
@@ -2310,4 +2214,96 @@
         console.error('There was a problem with the fetch operation:', error);
     });
 
+
+
+
+
+    const url = `http://127.0.0.1:8000/instagram/user_post/?username=${username}`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // Assuming the response is in JSON format
+        })
+        .then(data => {
+            console.log(data); // Process the data as needed
+            const cardsContainer = document.querySelector('.cards');
+
+            data.forEach(post => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.width = '345px';
+                card.style.height = '105px';
+                card.style.display = 'flex';
+                card.style.flexDirection = 'row';
+                card.style.boxShadow = 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px';
+                card.style.borderRadius = '11px';
+                card.style.backgroundColor = '#ffecec';
+
+                const imgDiv = document.createElement('div');
+                imgDiv.className = 'img';
+                imgDiv.style.width = '30%';
+
+                const img = document.createElement('img');
+                img.src = post.media_url || "/vendors/images/photo2.jpg" ; // Use the media URL from the API
+                img.alt = '';
+                img.style.padding = '15px';
+                img.style.loading = 'lazy';
+                img.style.borderRadius = '24px';
+                imgDiv.appendChild(img);
+
+                const detailsDiv = document.createElement('div');
+                detailsDiv.className = 'details';
+                detailsDiv.style.width = '70%';
+                detailsDiv.style.padding = '15px';
+
+                const caption = document.createElement('small');
+                caption.style.display = 'block';
+                caption.style.overflowWrap = 'break-word';
+                caption.style.maxWidth = '100%';
+                caption.style.height = '40px';
+				caption.textContent = post.caption && post.caption.length > 18 ? post.caption.slice(0, 18) + '...' : post.caption || 'No Caption';
+
+                const date = document.createElement('ul');
+                date.style.display = 'flex';
+                date.style.gap = '10px';
+                date.style.marginTop = '15px';
+                date.style.float = 'left';
+                const dateLi = document.createElement('small');
+                dateLi.textContent = new Date(post.taken_at).toLocaleDateString(); // Format the date as needed
+                date.appendChild(dateLi);
+
+                const interactions = document.createElement('ul');
+                interactions.style.display = 'flex';
+                interactions.style.gap = '10px';
+                interactions.style.marginTop = '15px';
+                interactions.style.float = 'right';
+
+                const likes = document.createElement('i');
+                likes.className = 'fa fa-heart';
+                likes.setAttribute('aria-hidden', 'true');
+                likes.textContent = post.like_count; // Use the like count from the API
+
+                const comments = document.createElement('i');
+                comments.className = 'fa fa-commenting-o';
+                comments.setAttribute('aria-hidden', 'true');
+                comments.textContent = post.comment_count; // Use the comment count from the API
+
+                interactions.appendChild(likes);
+                interactions.appendChild(comments);
+
+                detailsDiv.appendChild(caption);
+                detailsDiv.appendChild(date);
+                detailsDiv.appendChild(interactions);
+
+                card.appendChild(imgDiv);
+                card.appendChild(detailsDiv);
+                cardsContainer.appendChild(card); // Append the card to the cards container
+            });
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
 </script>
