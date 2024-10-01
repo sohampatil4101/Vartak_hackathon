@@ -2554,6 +2554,7 @@
 
 
 		const listItems = document.querySelectorAll('#account-list li');
+		console.log("soham is great", data['latitude'], data['longitude'])
 
 		// Array of account types corresponding to the JSON keys
 		const accountTypes = ['is_business', 'is_verified', 'is_private'];
@@ -2568,7 +2569,6 @@
 		});
     })
 
-		console.log(data['latitude'], data['longitude'])
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
     });
