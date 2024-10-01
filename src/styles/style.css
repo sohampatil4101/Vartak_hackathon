@@ -1409,7 +1409,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 }
 .sidebar-menu .dropdown-toggle{
 	display: block;
-	padding: 14px 15px 14px 67px;
+	padding: 14px 15px 14px 0px;
 	font-size: 15px;
 	color: #ffffff;
 	font-weight: 500;
