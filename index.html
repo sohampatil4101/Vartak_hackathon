@@ -840,7 +840,7 @@
 											role="tabpanel"
 										>
 											<div class="pd-20">
-												<div class="cards" style="display: flex; gap: 30px; flex-wrap: wrap;" >
+												<div class="cards" style="display: flex; gap: 15px; flex-wrap: wrap;" >
             										<div id="cards_loading" class="loading-text">Loading...</div>
 												</div>
 											</div>
@@ -1452,7 +1452,7 @@
 
 
                     <div class="row" style="background-color: white; border-radius: 11px; margin: 0px; margin-bottom: 30px; padding: 0px;">
-                        <iframe id="map" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe id="map" width="100%" height="450" style="border:0;" allowfullscreen="" ></iframe>
 
                     </div>
 
@@ -2203,9 +2203,8 @@
 
 
 
-    const url = `http://127.0.0.1:8000/instagram/user_post/?username=${username}`;
 
-    fetch(url)
+    fetch(`http://127.0.0.1:8000/instagram/user_post/?username=${username}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -2213,19 +2212,19 @@
             return response.json(); // Assuming the response is in JSON format
         })
         .then(data => {
-            console.log(data); // Process the data as needed
             const cardsContainer = document.querySelector('.cards');
 
             data.forEach(post => {
                 const card = document.createElement('div');
                 card.className = 'card';
+                card.id = post.id;
                 card.style.width = '345px';
                 card.style.height = '105px';
                 card.style.display = 'flex';
                 card.style.flexDirection = 'row';
                 card.style.boxShadow = 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px';
                 card.style.borderRadius = '11px';
-                card.style.backgroundColor = '#ffecec';
+                card.style.backgroundColor = 'white';
 
                 const imgDiv = document.createElement('div');
                 imgDiv.className = 'img';
@@ -2292,4 +2291,23 @@
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
+</script>
+
+<script>
+
+	fetch(`http://127.0.0.1:8000/instagram/ai_post_analyze/?username=${username}`)
+	.then(response => response.json())
+	.then(data => {
+		console.log(data)
+		for (let index = 0; index < data.length; index++) {
+			console.log(data[index]['post_id'], data[index]['analysis_response'],  data[index]['sentiment']);			
+			if(data[index]['sentiment'] == 'NEGATIVE'){
+				document.getElementById(data[index]['post_id']).style.backgroundColor = '#ffecec'
+			}
+		}
+	})
+	.catch(error => {
+		console.error('Error fetching the data:', error);
+	});
+
 </script>
