@@ -1,83 +1,189 @@
-var options = {
-	series: [
-	{
-		name: "Patients",
-		data: [10, 15, 12, 20, 18, 26, 24, 25, 20, 25, 22, 30]
-	},
-	{
-		name: "Consultations",
-		data: [15, 10, 17, 15, 23, 21, 30, 20, 26, 20, 28, 25]
-	}
-	],
-	chart: {
-		height: 300,
-		type: 'line',
-		zoom: {
-			enabled: false,
-		},
-		dropShadow: {
-			enabled: true,
-			color: '#000',
-			top: 18,
-			left: 7,
-			blur: 16,
-			opacity: 0.2
-		},
-		toolbar: {
-			show: false
-		}
-	},
-	colors: ['#f0746c', '#255cd3'],
-	dataLabels: {
-		enabled: false,
-	},
-	stroke: {
-		width: [3,3],
-		curve: 'smooth'
-	},
-	grid: {
-		show: false,
-	},
-	markers: {
-		colors: ['#f0746c', '#255cd3'],
-		size: 5,
-		strokeColors: '#ffffff',
-		strokeWidth: 2,
-		hover: {
-			sizeOffset: 2
-		}
-	},
-	xaxis: {
-		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-		labels:{
-			style:{
-				colors: '#8c9094'
-			}
-		}
-	},
-	yaxis: {
-		min: 0,
-		max: 35,
-		labels:{
-			style:{
-				colors: '#8c9094'
-			}
-		}
-	},
-	legend: {
-		position: 'top',
-		horizontalAlign: 'right',
-		floating: true,
-		offsetY: 0,
-		labels: {
-			useSeriesColors: true
-		},
-		markers: {
-			width: 10,
-			height: 10,
-		}
-	}
-};
+const username = 'sidddhesh.211623';
+
+fetch(`http://127.0.0.1:8000/instagram/get_user_stats/?username=${username}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(JSON.stringify(data));
+
+        // Map the response data into the options structure
+        var options = {
+            series: [
+                {
+                    name: "Likes",
+                    data: data.likes.reverse() // Reverse the order if necessary
+                },
+                {
+                    name: "Comments",
+                    data: data.comments.reverse() // Reverse the order if necessary
+                }
+                // You can add more series for "Shares" and "Saves" if needed
+            ],
+            chart: {
+                height: 300,
+                type: 'line',
+                zoom: {
+                    enabled: false,
+                },
+                dropShadow: {
+                    enabled: true,
+                    color: '#000',
+                    top: 18,
+                    left: 7,
+                    blur: 16,
+                    opacity: 0.2
+                },
+                toolbar: {
+                    show: false
+                }
+            },
+            colors: ['#f0746c', '#255cd3'],
+            dataLabels: {
+                enabled: false,
+            },
+            stroke: {
+                width: [3, 3],
+                curve: 'smooth'
+            },
+            grid: {
+                show: false,
+            },
+            markers: {
+                colors: ['#f0746c', '#255cd3'],
+                size: 5,
+                strokeColors: '#ffffff',
+                strokeWidth: 2,
+                hover: {
+                    sizeOffset: 2
+                }
+            },
+            xaxis: {
+                categories: data.dates.reverse(), // Reverse to match the data series
+                labels: {
+                    style: {
+                        colors: '#8c9094'
+                    }
+                }
+            },
+            yaxis: {
+                min: 0,
+                max: Math.max(...data.likes, ...data.comments) + 5, // Adjust the max if needed
+                labels: {
+                    style: {
+                        colors: '#8c9094'
+                    }
+                }
+            },
+            legend: {
+                position: 'top',
+                horizontalAlign: 'right',
+                floating: true,
+                offsetY: 0,
+                labels: {
+                    useSeriesColors: true
+                },
+                markers: {
+                    width: 10,
+                    height: 10,
+                }
+            }
+        };
+
+        // Now you can render your chart using the `options` variable
+        console.log(options); // For debugging, you can check the final structure
+
+		var chart = new ApexCharts(document.querySelector("#activities-chart"), options);
+		chart.render();
+    })
+    .catch(error => {
+        console.error('Error fetching user stats:', error);
+    });
+
+
+// var options = {
+// 	series: [
+// 	{
+// 		name: "Patients",
+// 		data: [10, 15, 12, 20, 18, 26, 24, 25, 20, 25, 22, 30]
+// 	},
+// 	{
+// 		name: "Consultations",
+// 		data: [15, 10, 17, 15, 23, 21, 30, 20, 26, 20, 28, 25]
+// 	}
+// 	],
+// 	chart: {
+// 		height: 300,
+// 		type: 'line',
+// 		zoom: {
+// 			enabled: false,
+// 		},
+// 		dropShadow: {
+// 			enabled: true,
+// 			color: '#000',
+// 			top: 18,
+// 			left: 7,
+// 			blur: 16,
+// 			opacity: 0.2
+// 		},
+// 		toolbar: {
+// 			show: false
+// 		}
+// 	},
+// 	colors: ['#f0746c', '#255cd3'],
+// 	dataLabels: {
+// 		enabled: false,
+// 	},
+// 	stroke: {
+// 		width: [3,3],
+// 		curve: 'smooth'
+// 	},
+// 	grid: {
+// 		show: false,
+// 	},
+// 	markers: {
+// 		colors: ['#f0746c', '#255cd3'],
+// 		size: 5,
+// 		strokeColors: '#ffffff',
+// 		strokeWidth: 2,
+// 		hover: {
+// 			sizeOffset: 2
+// 		}
+// 	},
+// 	xaxis: {
+// 		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+// 		labels:{
+// 			style:{
+// 				colors: '#8c9094'
+// 			}
+// 		}
+// 	},
+// 	yaxis: {
+// 		min: 0,
+// 		max: 35,
+// 		labels:{
+// 			style:{
+// 				colors: '#8c9094'
+// 			}
+// 		}
+// 	},
+// 	legend: {
+// 		position: 'top',
+// 		horizontalAlign: 'right',
+// 		floating: true,
+// 		offsetY: 0,
+// 		labels: {
+// 			useSeriesColors: true
+// 		},
+// 		markers: {
+// 			width: 10,
+// 			height: 10,
+// 		}
+// 	}
+// };
 
 var options2 = {
 	series: [{
@@ -258,9 +364,6 @@ var options4 = {
 	},
 	labels: ['Flu', 'Covid-19', 'Pheumoniae', 'Diabeties'],
 };
-
-var chart = new ApexCharts(document.querySelector("#activities-chart"), options);
-chart.render();
 
 var chart2 = new ApexCharts(document.querySelector("#appointment-chart"), options2);
 chart2.render();
